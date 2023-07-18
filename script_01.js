@@ -45,6 +45,8 @@
 // }
   
 
+const ERROR_STR_DIV = "Division durch 0 nicht möglich"
+
 // module: division a / b |  test:
 
 output(divide(4,2));
@@ -52,12 +54,26 @@ output(divide(6,-2));
 output(divide(12,7));
 output(divide(4,0));
 
+// function divide(a,b) {
+
+//     if (b != 0) {
+//         return a / b;
+//     } else {
+//         return "Division durch 0 nicht möglich";
+//     }
+
+// 	return a / b;
+// }
+// function output(outputData)
+// {
+//     console.log(outputData)
+// }
+
+
 function divide(a,b) {
 
-    if (b != 0) {
-        return a / b;
-    } else {
-        return "Division durch 0 nicht möglich";
+    if (b == 0) {       // Ausnahme + Abbruch
+        return ERROR_STR_DIV;
     }
 
 	return a / b;
