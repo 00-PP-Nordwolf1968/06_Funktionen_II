@@ -7,17 +7,51 @@
 
 1. Dateneingabe + -überprüfung : 
 2. Auswahl Rechenart : 
-3. Fkt. Grundrechenarten : 
+3. Fkt. Grundrechenarten : check!
 4. Ausgabe in Konsole : check!
 */
+
+const ERROR_STR_DIV = "Division durch 0 nicht möglich";
+const ERROR_STR_GEN = "Irgendwas ging hier schief!";
+
+// module: calculator | tests:
+
+// agreement : "+","-","*",":","/"
+output(calculator(3,2,"+"));
+output(calculator(3,2,"-"));
+output(calculator(3,2,"*"));
+output(calculator(3,2,":"));
+output(calculator(3,2,"/"));
+output(calculator(3,0,"/"));
+output(calculator(3,2,"#?!"));
+
+function calculator(a,b,op) {
+    switch (op) {
+        case "+":
+            return add(a,b);
+        case "-":
+            return substract(a,b)
+        case "*":
+            return multiply(a,b)
+        case ":":
+        case "/":
+            return divide(a,b)
+        default:
+            return ERROR_STR_GEN
+    }
+}
+
+
+
+
 
 // module: multiplication a * b |  test:
 // output(multiply(3,2));
 // output(multiply(3,-2));
 // output(multiply(3,0));
-// function multiply(a,b) {
-// 	return a*b;
-// }
+function multiply(a,b) {
+	return a*b;
+}
 
 
 // // module: subtraction a - b |  test:
@@ -25,17 +59,17 @@
 // // output(subtract(3,-2));
 // // output(subtract(3,0));
 // // output(subtract(0,3));
-// function subtract(a,b) {
-// 	return a - b;
-// }
+function substract(a,b) {
+	return a - b;
+}
 
 // // module: addition a + b |  test:
 // // output(add(2,2));
 // // output(add(2,-2));
 // // output(add(2,0));
-// function add(a,b) {
-// 	return a + b;
-// }
+function add(a,b) {
+	return a + b;
+}
 
 // // module: output | test:
 // // output("hello");
@@ -45,14 +79,14 @@
 // }
   
 
-const ERROR_STR_DIV = "Division durch 0 nicht möglich"
+
 
 // module: division a / b |  test:
 
-output(divide(4,2));
-output(divide(6,-2));
-output(divide(12,7));
-output(divide(4,0));
+// output(divide(4,2));
+// output(divide(6,-2));
+// output(divide(12,7));
+// output(divide(4,0));
 
 // function divide(a,b) {
 
@@ -76,9 +110,12 @@ function divide(a,b) {
         return ERROR_STR_DIV;
     }
 
-	return a / b;
+	return a / b;       // Regel
 }
 function output(outputData)
 {
     console.log(outputData)
 }
+
+
+
